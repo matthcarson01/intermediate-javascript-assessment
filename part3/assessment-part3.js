@@ -13,7 +13,10 @@
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
-
+function callBinding(magicAnimals, updateAnimal, id){
+    // let updateMagicAnimal = updateAnimal.bind(magicAnimals[id]);
+    return updateAnimal.call(magicAnimals[id],'Trogdor');
+}
 
 
 // *************
@@ -28,7 +31,9 @@
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
-
+function applyBinding(magicAnimals, updateAnimal, id){
+    return updateAnimal.apply(magicAnimals[id],['being majestic', 'eating rainbows']); 
+}
 
 
 // *************
@@ -48,7 +53,21 @@
 var foo;
 
 // CODE HERE...
-
+function promiseMe($q){
+    return $q((resolve, reject) => {
+        setTimeout(()=>{
+        if (true) {
+          resolve();
+        } else {
+          reject();
+        }
+        }
+        ,20)
+      
+      
+    });
+    
+}
 
 
 // *************
@@ -64,3 +83,4 @@ var foo;
 // and then resolve the array as you complete your promise.
 
 // CODE HERE...
+
